@@ -1,0 +1,28 @@
+type Query {
+    character(name: String!): Character
+}
+
+type Character {
+    name: String
+    films: [Film]
+    vehicles: [Vehicle]
+}
+
+type Film {
+    title: String
+}
+
+type Vehicle {
+    name: String
+}
+
+type Mutation {
+    saveSearchResult(characterName: String!, films: [String!], vehicles: [String!]): SearchResult
+}
+
+type SearchResult {
+    id: ID!
+    characterName: String!
+    films: [String!]
+    vehicles: [String!]
+}
